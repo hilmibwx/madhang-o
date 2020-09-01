@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','FrontController@home')->name('homepage');
+Route::post('booking','FrontController@booking')->name('booking');
 
 Auth::routes(['register' => false]);
 
@@ -70,6 +71,14 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('special/edit/{id}','SpecialController@edit')->name('special.edit');
     Route::post('special/edit/{id}','SpecialController@update')->name('special.update');
     Route::delete('special/destroy/{id}','SpecialController@destroy')->name('special.destroy');
+
+    // Manage Special
+    Route::get('booking','BookingController@index')->name('booking.index');
+    // Route::get('booking/create','BookingController@create')->name('booking.create');
+    // Route::post('booking/store','BookingController@store')->name('booking.store');
+    Route::get('booking/edit/{id}','BookingController@edit')->name('booking.edit');
+    Route::post('booking/edit/{id}','BookingController@update')->name('booking.update');
+    Route::delete('booking/destroy/{id}','BookingController@destroy')->name('booking.destroy');
 
     // Manage Special
     Route::get('why-us','WhyusController@index')->name('why.index');
