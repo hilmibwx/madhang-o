@@ -86,9 +86,25 @@
         </div>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{{ route('inbox.index') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Inbox</span></a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{{ route('special.index') }}">
           <i class="fas fa-fw fa-table"></i>
           <span>Special</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('testi.index') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Testimoni</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('gallery.index') }}">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Gallery</span></a>
       </li>
       <hr class="sidebar-divider">
       <!-- Nav Item - Pages Collapse Menu -->

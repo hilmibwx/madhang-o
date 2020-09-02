@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\{About, Banner, Booking, Event, Category, General, Menu, Special, Whyus};
+use App\{About, Banner, Booking, Event, Category, General, Gallery, Menu, Special, Testi, Whyus, Inbox};
 
 class FrontController extends Controller
 {
@@ -18,7 +18,9 @@ class FrontController extends Controller
         $special = Special::all();
         $tabspecial = Special::all();
         $why = Whyus::orderBy('id','asc')->get();
-        return view('homepage', compact('about','banner','event','category','general','menu','special','tabspecial','why'));
+        $testi = Testi::where('status','=','PUBLISH')->get();
+        $gallery = Gallery::orderBy('id','desc')->get();
+        return view('homepage', compact('about','banner','event','category','general','menu','special','tabspecial','why','testi','gallery'));
     }
 
     public function booking(Request $request)
@@ -32,9 +34,23 @@ class FrontController extends Controller
         $book->people = $request->people;
         $book->message = $request->message;
         if ($book->save()) {
-            return redirect()->back()->with('success', 'Booking successfully');
+            return redirect()->back()->with('success', 'Booking sent successfully');
            } else {
-            return redirect()->back()->with('error', 'Booking failed');
+            return redirect()->back()->with('error', 'Booking failed to send');
+           }
+    }
+
+    public function inbox(Request $request)
+    {
+        $inbox           = new Inbox();
+        $inbox->name     = $request->name;
+        $inbox->email    = $request->email;
+        $inbox->subject  = $request->subject;
+        $inbox->message  = $request->message;
+        if ($inbox->save()) {
+            return redirect()->back()->with('success', 'Message sent successfully');
+           } else {
+            return redirect()->back()->with('error', 'Message failed to send');
            }
     }
 }

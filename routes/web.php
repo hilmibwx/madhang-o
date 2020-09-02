@@ -15,14 +15,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','FrontController@home')->name('homepage');
 Route::post('booking','FrontController@booking')->name('booking');
+Route::post('message','FrontController@inbox')->name('inbox');
 
 Auth::routes(['register' => false]);
 
 
-
+Route::get('dashboard', 'HomeController@index')->name('home');
 // Admin
 Route::prefix('admin')->middleware('auth')->group(function () {
-    Route::get('dashboard', 'HomeController@index')->name('home');
+    
 
     // Manage Event
     Route::get('event','EventController@index')->name('event.index');
@@ -72,7 +73,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::post('special/edit/{id}','SpecialController@update')->name('special.update');
     Route::delete('special/destroy/{id}','SpecialController@destroy')->name('special.destroy');
 
-    // Manage Special
+    // Manage Booking
     Route::get('booking','BookingController@index')->name('booking.index');
     // Route::get('booking/create','BookingController@create')->name('booking.create');
     // Route::post('booking/store','BookingController@store')->name('booking.store');
@@ -84,4 +85,22 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('why-us','WhyusController@index')->name('why.index');
     Route::get('why-us/edit/{id}','WhyusController@edit')->name('why.edit');
     Route::post('why-us/edit/{id}','WhyusController@update')->name('why.update');
+
+    // Manage Testi
+    Route::get('testi','TestiController@index')->name('testi.index');
+    Route::get('testi/create','TestiController@create')->name('testi.create');
+    Route::post('testi/store','TestiController@store')->name('testi.store');
+    Route::get('testi/edit/{id}','TestiController@edit')->name('testi.edit');
+    Route::post('testi/edit/{id}','TestiController@update')->name('testi.update');
+    Route::delete('testi/destroy/{id}','TestiController@destroy')->name('testi.destroy');
+
+    // Manage Gallery
+    Route::get('gallery','GalleryController@index')->name('gallery.index');
+    Route::post('gallery/store','GalleryController@store')->name('gallery.store');
+    Route::delete('gallery/destroy/{id}','GalleryController@destroy')->name('gallery.destroy');
+
+    // Manage Inbox
+    Route::get('inbox','InboxController@index')->name('inbox.index');
+    Route::delete('inbox/destroy/{id}','InboxController@destroy')->name('inbox.destroy');
+
 });

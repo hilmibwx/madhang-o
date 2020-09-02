@@ -440,138 +440,18 @@
 
         <div class="row no-gutters">
 
+          @foreach ($gallery as $item)
           <div class="col-lg-3 col-md-4">
             <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-1.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-1.jpg')}}" alt="" class="img-fluid">
+              <a href="{{asset('storage/'.$item->cover)}}" class="venobox" data-gall="gallery-item">
+                <img src="{{asset('storage/'.$item->cover)}}" alt="" class="img-fluid">
               </a>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-2.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-2.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-3.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-3.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-4.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-4.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-5.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-5.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-6.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-6.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-7.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-7.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-4">
-            <div class="gallery-item">
-              <a href="{{asset('assets/img/gallery/gallery-8.jpg')}}" class="venobox" data-gall="gallery-item">
-                <img src="{{asset('assets/img/gallery/gallery-8.jpg')}}" alt="" class="img-fluid">
-              </a>
-            </div>
-          </div>
-
+          @endforeach
         </div>
-
       </div>
     </section><!-- End Gallery Section -->
-
-    {{-- <!-- ======= Chefs Section ======= -->
-    <section id="chefs" class="chefs">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Our Proffesional <span>Chefs</span></h2>
-          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{asset('assets/img/chefs/chefs-1.jpg')}}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Master Chef</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{asset('assets/img/chefs/chefs-2.jpg')}}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Patissier</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="member">
-              <div class="pic"><img src="{{asset('assets/img/chefs/chefs-3.jpg')}}" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>Cook</span>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Chefs Section --> --}}
 
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
@@ -579,95 +459,41 @@
 
         <div class="owl-carousel testimonials-carousel">
 
+          @foreach ($testi as $testi)
           <div class="testimonial-item">
-            <img src="{{asset('assets/img/testimonials/testimonials-1.jpg')}}" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo &amp; Founder</h4>
+            <img src="{{asset('storage/'.$testi->photo)}}" class="testimonial-img" alt="">
+            <h3>{{ $testi->name }}</h3>
+            <h4>{{ $testi->address }}</h4>
             <div class="stars">
+              @if($testi->star == 1)
+              <i class="icofont-star"></i>
+              @elseif($testi->star == 2)
+              <i class="icofont-star"></i>
+              <i class="icofont-star"></i>
+              @elseif($testi->star == 3)
+              <i class="icofont-star"></i>
+              <i class="icofont-star"></i>
+              <i class="icofont-star"></i>
+              @elseif($testi->star == 4)
+              <i class="icofont-star"></i>
+              <i class="icofont-star"></i>
+              <i class="icofont-star"></i>
+              <i class="icofont-star"></i>
+              @elseif($testi->star == 5)
               <i class="icofont-star"></i>
               <i class="icofont-star"></i>
               <i class="icofont-star"></i>
               <i class="icofont-star"></i>
               <i class="icofont-star"></i>
+              @endif
             </div>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+              {{ $testi->desc }}
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
           </div>
-
-          <div class="testimonial-item">
-            <img src="{{asset('assets/img/testimonials/testimonials-2.jpg')}}" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{{asset('assets/img/testimonials/testimonials-3.jpg')}}" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{{asset('assets/img/testimonials/testimonials-4.jpg')}}" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="{{asset('assets/img/testimonials/testimonials-5.jpg')}}" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-            <div class="stars">
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-              <i class="icofont-star"></i>
-            </div>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+          @endforeach
 
         </div>
 
@@ -717,30 +543,44 @@
             </div>
           </div>
         </div>
+        @if (session('error'))
+            
+        <div class="alert alert-danger">
+    
+          {{ session('error') }}
+    
+        </div>
+    
+        @endif    
+    
+        @if (session('success'))
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <div class="alert alert-success">
+
+          {{ session('success') }}
+
+        </div>
+
+        @endif
+        <form action="{{ route('inbox') }}" method="POST" class="php-email-form">
+          @csrf
           <div class="form-row">
             <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required/>
               <div class="validate"></div>
             </div>
             <div class="col-md-6 form-group">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
               <div class="validate"></div>
             </div>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required />
             <div class="validate"></div>
           </div>
           <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+            <textarea class="form-control" name="message" rows="5" required></textarea>
             <div class="validate"></div>
-          </div>
-          <div class="mb-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
           <div class="text-center"><button type="submit">Send Message</button></div>
         </form>
