@@ -17,14 +17,14 @@ Route::get('/','FrontController@home')->name('homepage');
 Route::post('booking','FrontController@booking')->name('booking');
 Route::post('message','FrontController@inbox')->name('inbox');
 
+
+
 Auth::routes(['register' => false]);
 
-
-Route::get('dashboard', 'HomeController@index')->name('home');
 // Admin
 Route::prefix('admin')->middleware('auth')->group(function () {
     
-
+    Route::get('dashboard', 'HomeController@index')->name('home');
     // Manage Event
     Route::get('event','EventController@index')->name('event.index');
     Route::get('event/create','EventController@create')->name('event.create');

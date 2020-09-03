@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\{Inbox, Booking, Menu, Testi};
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $inbox = Inbox::count();
+        $booking = Booking::count();
+        $menu = Menu::count();
+        $testi = Testi::count();
+        return view('home', compact('inbox','booking','menu','testi'));
     }
 }
